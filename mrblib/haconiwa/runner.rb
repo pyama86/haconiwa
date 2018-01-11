@@ -108,7 +108,9 @@ module Haconiwa
                 Logger.exception(e)
               end
             end
+            Logger.debug("before namespace file: #{base.filesystem.chroot} exists: #{File.exists?(base.filesystem.chroot)}")
             apply_namespace(base.namespace)
+            Logger.debug("after namespace file: #{base.filesystem.chroot} exists: #{File.exists?(base.filesystem.chroot)}")
 
             Logger.debug("OK: apply_namespace")
             apply_filesystem(base)
